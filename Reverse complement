@@ -1,0 +1,50 @@
+def ReverseComplement(Pattern):
+    """Finds the reverse complement of a DNA string.
+
+  Args:
+    Pattern: A DNA string.
+
+  Returns:
+    The reverse complement of Pattern.
+  """
+
+    return Reverse(Complement(Pattern))
+
+
+def Reverse(Pattern):
+    """Reverses all the letters of the string Pattern.
+
+  Args:
+    Pattern: A string.
+
+  Returns:
+    A string formed by reversing all the letters of Pattern.
+  """
+
+    rev = ""
+    for i in range(len(Pattern) - 1, -1, -1):
+        rev += Pattern[i]
+    return rev
+
+
+def Complement(Pattern):
+    """Takes the complement of each letter of the string Pattern.
+
+  Args:
+    Pattern: A string.
+
+  Returns:
+    A string formed by taking the complement of each letter of Pattern.
+  """
+
+    complement = ""
+    for i in range(len(Pattern)):
+        if Pattern[i] == "A":
+            complement += "T"
+        elif Pattern[i] == "T":
+            complement += "A"
+        elif Pattern[i] == "C":
+            complement += "G"
+        elif Pattern[i] == "G":
+            complement += "C"
+    return complement
